@@ -1,0 +1,235 @@
+@font-face {
+    font-family: 'Raleway-bold';
+    src: url('./police/Raleway-Bold.eot');
+    src: url('./police/Raleway-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./police/Raleway-Bold.woff2') format('woff2'),
+        url('./police/Raleway-Bold.woff') format('woff'),
+        url('./police/Raleway-Bold.ttf') format('truetype'),
+        url('./police/Raleway-Bold.svg#Raleway-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway-medium';
+    src: url('./police/Raleway-Medium.eot');
+    src: url('./police/Raleway-Medium.eot?#iefix') format('embedded-opentype'),
+        url('./police/Raleway-Medium.woff2') format('woff2'),
+        url('./police/Raleway-Medium.woff') format('woff'),
+        url('./police/Raleway-Medium.ttf') format('truetype'),
+        url('./police/Raleway-Medium.svg#Raleway-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Raleway-medium', 'Raleway-bold', 'Verdana', 'Trebuchet MS';
+}
+
+/* Le body commence tout en haut de la page pour créer une bordure au bord de l'écran lors du survol de la liste */
+body {
+    margin-top: 0;
+}
+
+#bloc-page {
+    margin: 0 42px 51px 42px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#logo {
+    margin-top: 0;
+    padding-top: 50px;
+}
+
+/* Navigation */
+
+nav {
+    display: flex;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    font-size: 16px;
+    margin-top: 0;
+}
+
+nav li {
+    /* Les éléments de la liste sont situés à la même distance du haut de page que le logo */
+    padding-top: 50px;
+    width: 160px;
+    text-align: center;
+}
+nav div {
+    font-family: 'Raleway-bold';
+    width: 100px;
+    padding-top: 50px;
+    margin-right: 26px;
+    text-align: right;
+}
+
+h1 {
+    font-family: 'Raleway-bold';
+    font-size: 1.35em;
+    margin-top: 35px;
+    margin-left: 2px;
+    margin-bottom: 8px;
+}
+
+#recherche p {
+    margin-top: 0;
+    margin-left: 3px;
+}
+
+/* Formulaire - Le conteneur flex aligne tous les éléments du formulaire tout en leur attribuant une hauteur */
+
+form {
+    display: flex;
+    margin-top: 8px;
+    height: 51px; 
+}
+
+input[type=search] {
+    display: block;
+    border: 2px solid #F2F2F2;
+    font-family: 'Raleway-bold';
+    font-size: 1.1em;
+    padding: 0 15px;
+}
+
+#icone-ville {
+    width: 52px;
+    background: #F2F2F2;
+    text-align: center;
+    padding-top: 16px;
+    border-radius: 17px 0 0 17px;
+}
+
+#rechercher {
+    width: 134px;
+    background: #0065FC;
+    color: white;
+    font-family: 'Raleway-bold';
+    font-size: 1.1em;
+    border: 0;
+    border-radius: 0 17px 17px 0;
+}
+
+/* Filtres */
+
+#liste-filtre {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding-left: 9px;
+}   
+
+#liste-filtre li {
+    font-family: 'Raleway-bold';
+    font-size: 1.1em;
+    margin-top: 25px;
+    margin-right: 52px;
+}
+
+#titre-filtre {
+    margin-right: 75px;
+}
+
+.type-filtre {
+    position: relative;
+    font-family: 'Raleway-bold';
+    border: 2px solid #F2F2F2;
+    border-radius: 0 2em 2em 0;
+    /* Définit un modèle de bordure qui s'adapte à la longueur du texte pour accueillir l'icône */
+    padding: 10px 18px 13px 34px;  
+}
+
+/* Icônes de filtre */
+
+.fa-stack {  
+   color:  #DEEBFF; 
+   /* Place correctement l'icône à l'intérieur de la bordure */
+   position: absolute;
+   left: -34px;  
+   bottom: -3px; 
+   /* Définit la taille globale de l'icône */
+   font-size: 25px; 
+}
+
+.fa-money-bill-wave, .fa-child, .fa-heart, .fa-dog {
+    color: #0065FC;
+    /* Définit la taille du dessin à l'intérieur de l'icône */
+    font-size: 18px; 
+}
+
+/* Message d'information */
+
+/* Icône */
+#message {
+    margin: 0;
+    padding-top: 16px;
+    vertical-align: top;
+}
+
+.fa-info {
+    color: #0065FC;
+    font-size: 11px;
+}
+/* Le cercle entourant le "i" est dessiné par CSS */
+#cercle {
+    border: 1px solid #F2F2F2;
+    padding: 1px 9px;
+    border-radius: 50%;
+    position: relative;
+    left: 5px;
+    top: 17px;
+}
+
+#texte-info {
+    display: flex;
+    margin-left: 39px;
+    margin-top: 0px;
+}
+
+/* Apparence dynamique */
+
+#chapitres li:hover {
+    color: #0065FC;
+    border-top: 2px solid #0065FC;
+}
+
+nav div:hover {
+    color: #0065FC;
+}
+
+#rechercher:active {
+    color:#0065FC;
+    background: white;
+}
+
+.type-filtre:hover {
+    color: white;
+    border: 2px solid #0065FC;
+    background: #0065FC;
+} 
+   
+.type-filtre:active {
+    color: #0065FC;
+    background: white;
+} 
+  
+
+        
+ 
+  
+
+
+        
+
+                                   
+                                   
+                    
