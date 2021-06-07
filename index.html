@@ -1,94 +1,84 @@
 <!DOCTYPE html>
 <html>
+    
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css" />
-        <title>Page d'accueil - Reservia</title>
+        <link rel="stylesheet" href="resp.css" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/e07870f372.js" crossorigin="anonymous"></script>
+        <title>Page d'accueil - Reservia</title>
     </head>
 
     <body>
-        <!-- Ce bloc permet de faciliter le passage au responsive -->
         <div id="bloc-page">
-            
-            <!-- L'en-tête est constitué du logo et des liens de navigation -->
             <header>
-                <div id="logo"><img src="./logo/Reservia.svg" alt="logo" />
+                <div id="haut-de-page">
+                    <div id="logo"><img src="./logo/Reservia.svg" alt="logo" /></div>
+                    <nav id="nav-normal">
+                        <ul>
+                            <li><a href="#">Hébergements</a></li>
+                            <li><a href="#">Activités</a></li>
+                        </ul>
+                    <div><a href="#">S'inscrire</a></div>
+                    </nav>
                 </div>
-                <nav>
-                    <ul id="chapitres">
-                        <li>Hébergements</li>
-                        <li>Activités</li>
+                 
+                <nav id="nav-petit">
+                    <ul>
+                        <li><a href="#">Hébergements</a></li>
+                        <li><a href="#">Activités</a></li>
                     </ul>
-                    <div>S'inscrire
-                    </div>
                 </nav>
-            </header>
-            
-            <!-- La première section englobe la recherche et le filtrage -->
-            <section id="recherche">  
-                <h1>Trouvez votre hébergement pour des vacances de rêve</h1>    
-                <p>En plein centre ville ou en pleine nature</p>
-                
-                <!-- Le formulaire est un conteneur flex constitué du label, de la zone de texte et du bouton -->
-                <form method="post" action="traitement.php">
-                    <!-- Cet objet renvoie à la zone de texte -->
-                    <label for="ville" id="icone-ville">
-                        <i class="fas fa-map-marker-alt fa-1x"></i>
-                    </label> 
-                    <input type="search" id="ville" name="rech_ville" size="19" placeholder="Votre destination" />   
-                    <button id="rechercher" type="submit" class="#">Rechercher</button>
-                </form>
-           
-                <!-- Les options de filtrage -->
-                <ul id="liste-filtre">
-                    <li id="titre-filtre">Filtres</li>
-                  
-                    <!-- Le type de filtre est le parent de l'icône pour positionner celle-ci en absolute --> <li>
-                        <span class="type-filtre">Économique
-                            <span class="fa-stack fa-2x">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fas fa-money-bill-wave fa-stack-1x"></i>
-                            </span>
-                        </span>
-                    </li>   
-            
-                    <li>
-                        <span class="type-filtre">Familial
-                            <span class="fa-stack fa-2x">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fas fa-child fa-stack-1x"></i>
-                            </span> 
-                        </span>
-                    </li> 
-                    
-                    <li>
-                        <span class="type-filtre">Romantique
-                            <span class="fa-stack fa-2x">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fas fa-heart fa-stack-1x"></i>
-                            </span> 
-                        </span>
-                    </li>  
-                    
-                    <li>
-                        <span class="type-filtre">Animaux autorisés
-                            <span class="fa-stack fa-2xmm">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fas fa-dog fa-stack-1x"></i>
-                            </span>
-                        </span>
-                    </li>  
-                </ul> 
-              
-                <!-- Le message d'information -->
-                <div id="message">
-                    <span id="cercle"> <i class="fas fa-info"></i></span>
-                    <span id="texte-info">Plus de 500 logements sont disponibles dans cette ville</span>
-                </div>
-            </section> 
         
+                <section id="section-recherche">  
+                    <h1>Trouvez votre hébergement pour des vacances de rêve</h1>    
+                    <p>En plein centre ville ou en pleine nature</p>
+                
+                    <form method="post" action="traitement.php">
+                        <label for="ville" id="icone-ville"><i class="fas fa-map-marker-alt fa-1x"></i></label> 
+                        <input type="search" id="ville" name="rech_ville" size="20" placeholder="Votre destination" />
+                        <button id="texte-rechercher" type="submit" class="#"><a href="#">Rechercher</a></button>
+                        <button id="icone-rechercher" type="submit" class="#"><a href="#"><i class="fas fa-search"></i></a></button>
+                    </form>
+           
+                    <ul id="ul-filtre">
+                        <div id="titre-filtre">Filtres</div>
+                        <div class="filtres">
+                            <li class="li-filtre">
+                                <div class="cercle"> <i class="fas fa-money-bill-wave"></i></div>
+                                <a class="nom-filtre" href="#">Économique</a> 
+                            </li>   
+                            <li class="li-filtre">
+                                <div class="cercle"> <i class="fas fa-child"></i></div>
+                                <a class="nom-filtre" href="#">Familial</a> 
+                            </li> 
+                            <li class="li-filtre">
+                                <div class="cercle"> <i class="fas fa-heart"></i></div>
+                                <a class="nom-filtre" href="#">Romantique</a> 
+                            </li>  
+                            <li class="li-filtre"> 
+                                <div class="cercle"> <i class="fas fa-dog"></i></div>         
+                                <a class="nom-filtre" href="#">Animaux autorisés</a>
+                            </li>   
+                        </div>
+                    </ul> 
+              
+                    <div id="information">
+                        <div id="cercle-info"> <i class="fas fa-info"></i></div>
+                        Plus de 500 logements sont disponibles dans cette ville
+                    </div>
+            
+                </section> 
+
+            </header>
+
             <section id="hebergements"></section>
+                 <article></article>
+                 <aside></aside>
+            </section>
             
             <section id="activités"></section>
             
