@@ -1,9 +1,10 @@
-@media all and (min-width: 1025px) {
+@media all and (min-width: 1024px) {
   
-    #bloc-page {
-        margin: 0 42px 51px 42px;
-        max-width: 1340px;
-}
+    header, #section-hebergements, #section-activites, #footer-liste {
+        margin-left: auto;
+        margin-right: auto;
+        width: 93%;
+}  
 
     #nav-petit {
 	    display: none;
@@ -15,7 +16,7 @@
 
 }
 
-@media all and (min-width: 768px) and (max-width: 1024px) {
+@media all and (min-device-width: 768px) and (max-device-width: 1024px) {
 
     #bloc-page {
         margin: 0 25px 25px 25px;
@@ -34,7 +35,7 @@
         padding-left: 30px;
 }
   
-    #section-recherche h1 {
+    #partie-recherche h1 {
     	margin-top: 22px;
 }
 
@@ -63,7 +64,7 @@
         margin: 30px 0 51px 0;
 }
 	  
-	#haut-de-page, #section-recherche {
+	#haut-de-page, #partie-recherche {
 	  	margin: 0 15px 0 20px;
 }
 
