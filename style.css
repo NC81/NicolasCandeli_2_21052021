@@ -1,8 +1,5 @@
-@font-face {
-    font-family: 'Raleway';
-}
-
-* {
+body {
+    margin: 0; /* Pour toucher tous les bords */
     font-family: 'Raleway', sans-serif;
 }
 
@@ -15,137 +12,123 @@ a:hover {
     color: #0065FC;
 }
 
-h1 {
+h1, h2 {
     font-size: 23px;
     font-weight: bold;
-}
-
-h2 {
-    font-size: 20px;
-    font-weight: bold;  
+    margin: 0;
 }
 
 h3 {
-    font-size: 18px;
-    font-weight: bold;  
+    font-size: 19px;
+    font-weight: bold; 
+    margin: 0; 
 }
 
 h4 {
     font-size: 16px;
-    font-weight: bold;  
+    font-weight: bold; 
+    margin: 0; 
 }
 
-
-body {
-    margin: 0; /* Pour toucher tous les bords avec des blocs */
+p {
+    margin: 0;
 }
 
-/* Haut-de-page */
+/* Header-haut */
 
-#haut-de-page {
+#header-haut {
     display: flex;
     justify-content: space-between;
 }
 
 #logo {
-    margin-top: 0;
-    padding-top: 50px;
+    margin-top: 50px;
 }
 
 /* Navigation */
 
-#nav-normal {
-    display: flex;
+#nav-haut {
+display: flex;
 }
 
-#nav-normal ul {
+#nav-haut ul {
     display: flex;
     list-style-type: none;
-    font-size: 16px;
     margin-top: 0;
 }
 
-#nav-normal li {
-    padding-top: 50px;
-    width: 160px;
-    text-align: center;
+#nav-haut li {
     font-weight: 500;
+    width: 160px;
+    padding-top: 50px; /* Définir padding-top permet d'obtenir une bordure qui touche le haut de l'écran */
+    text-align: center;
 }
 
-#nav-normal li:hover {
+#nav-haut li:hover {
     border-top: 2px solid #0065FC;
-    color: #0065FC;
 }
 
-#nav-normal div {
+#nav-haut div {
     font-weight: bold;
-    width: 100px;
-    padding-top: 50px;
-    margin-right: 0;
-    text-align: right;
+    width: 140px;
+    margin-top: 50px;
+    text-align: center;
 }
 
-#nav-petit ul {
+#nav-480 ul {
     display: flex;
-    justify-content: center;
     list-style-type: none;
-    font-size: 16px;
     padding-left: 0;
     margin-top: 25px;
 }
 
-#nav-petit li {
+#nav-480 li {
     height: 32px;
     width: 50%;
+    border-bottom: 2px solid #F2F2F2;
     text-align: center;
     font-weight: 500;
 }
 
-#nav-petit li:hover {
-    color: #0065FC;
-    border-bottom: 2px solid #0065FC;
+#nav-480 li:hover {
+     border-bottom: 2px solid #0065FC;
 }
 
 /* /Navigation */
-/* /Haut-de-page */
+/* /Header-haut */
 
-/* Partie-recherche */
+/* Header-bas */
 
-#partie-recherche {
-    margin-left: 0;
-}
-
-#partie-recherche h1{
+#header-bas h1{
     margin-top: 35px;
-    margin-bottom: 8px;
 }
 
-#partie-recherche p {
-    margin-top: 0;
+#header-bas p {
+    margin-top: 8px;
 }
 
-/* Formulaire - Le conteneur flex aligne tous les éléments du formulaire en leur donnant une hauteur */
+/* Formulaire */
 
 form {
     display: flex;
-    margin-top: 8px;
-    height: 51px; 
+    margin-top: 24px;
+    height: 50px; 
 }
 
 input[type=search] {
-    display: block;
     border: 2px solid #F2F2F2;
     border-right: none;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 18px;
     padding: 0 15px;
 }
 
 #icone-ville {
-    width: 52px;
-    line-height: 52px;
+    width: 50px;
+    line-height: 50px; /* Donner la même valeur à "line-height" qu'à "height" permet de centrer un objet verticalement */
     background: #F2F2F2;
     text-align: center;
+    font-size: 18px; /* Pour centrer l'icône horizontalement */
     border-radius: 17px 0 0 17px;
 }
 
@@ -154,15 +137,15 @@ input[type=search] {
     background: #0065FC;
     color: white;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 18px;
     border: 0;
     border-radius: 0 17px 17px 0;
 }
 
 #icone-rechercher {
     position: relative;
-    font-size: 1.1em;
     right: 11px;
+    font-size: 18px;
     width: 52px;
     background: #0065FC;
     color: white;
@@ -170,89 +153,73 @@ input[type=search] {
     border-radius: 17px;
 }
 
-#texte-rechercher a, #icone-rechercher a, #texte-rechercher, #icone-rechercher {
+#texte-rechercher, #icone-rechercher {
     color: white;
     background: #0065FC;
-    text-decoration: none;
 }
 
 #texte-rechercher:active, #icone-rechercher:active {
-    background: white;
-    border: 3px solid #0065FC;
-}
-
-#texte-rechercher a:active, #icone-rechercher a:active {
-    color:#0065FC;
+    color: #0065FC;
     background: white;
 }
 
 /* /Formulaire */
-/* /Partie-recherche */
+/* /Header-bas */
 
 /* Filtres */
+
+#filtres {
+    display: flex;
+    font-weight: bold;
+    margin-top: 18px;
+}
 
 #ul-filtre {
     display: flex; /* Pour bénéficier de la valeur "wrap" en responsive */
     flex-wrap: wrap;
-    font-weight: bold;
-    margin-top: 28px;
     padding-left: 0;
-}
-
-.filtres {
-    display: flex;
-    flex-wrap: wrap;
+    margin: 0;
+    list-style-type: none;
 }
 
 .li-filtre {
-    display: flex; /* Pour mettre les deux blocs (icône et texte) à la suite */
-    border: 2px solid #F2F2F2;
-    border-left: none;
-    border-radius: 2em; 
-    padding-right: 13px;   
     margin-right: 20px;
 }
 
-.li-filtre:hover {
-    color: #0065FC;
-    border: 4px solid #0065FC;
-} 
+.li-filtre a {
+    display: flex; 
+    border: 2px solid #F2F2F2;
+    border-left: none;
+    border-radius: 28px; 
+    line-height: 50px; 
+}
 
-.li-filtre:active {
+.li-filtre a:focus {
     border: 4px solid #0065FC;
     background: #0065FC;
+    color: white;
 } 
 
 .cercle-filtre {
     width: 50px;
     height: 50px;
-    line-height: 50px; /* Donner la même valeur à "line-height" qu'à "height" permet de centrer un objet verticalement */
+    line-height: 50px; 
     background: #DEEBFF;
     border-radius: 50%;
-    text-align: center;
+    text-align: center; 
 }
 
 #titre-filtre {
-    margin-right: 30px;
-    padding-top: 14px;
+    margin: 18px 30px 0 0;
 }
 
 .nom-filtre {
-    margin-top: 14px;
-    margin-left: 8px;
+    padding: 0 12px 0 10px
 }
 
 .fa-money-bill-wave, .fa-child, .fa-heart, .fa-dog {
     color: #0065FC; /* Définit la taille des icônes à l'intérieur du cercle */
     font-size: 18px; 
-}
-
-.li-filtre a:hover {
-    color: #0065FC;
-}
-
-.li-filtre a:active {
-    color: white;
 }
 
 /* /Filtres */
@@ -285,69 +252,77 @@ input[type=search] {
 /* Section Hébergements */
 /* Hébergements Article */
 
-#section-hebergements {
+#section-heberg {
     display: flex;
+    justify-content: space-between; /* Pour coller "aside" à droite dans toutes les résolutions */
     margin-top: 40px;
 }
 
-#section-hebergements article {
+article {
     background: #F2F2F2;
-    width: 62%;
-    height: 580px;
+    width: 66%;
     border-radius: 20px;
-    padding: 45px 40px;
+    padding: 45px 0;
 }
 
-#hebergements-norm {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: space-between;
-    height: 450px;
-    padding: 30px 0;
+#contenu-article {
+    margin: 0 40px;
 }
 
-#section-hebergements h1, #section-hebergements h4 {
-    margin: 0;
+#heberg-article a {
+    margin: 30px 0 0 0;
 }
 
-#section-hebergements h2 {
-    margin: 17px 0 0 0;
-}
-
-#section-hebergements p {
-    font-size: 14px;
-}
-
-.heberg-caption-article {
-    padding-left: 13px;
-    padding-top: 9px;
-}    
-
-.heberg-caption-article p {
-    margin-top: 5px;
-    margin-bottom: 8px;
-}
-
-.figure-hebergements-norm {
+#heberg-article a {
     border: 5px solid white;
     border-radius: 20px;
     box-shadow: 0px 1px 10px 0px #bbbbbb87;
     overflow: hidden;
     background:white;
-    height: 200px;
+}
+
+.figure-heberg-article {
     margin: 0;
 }
 
-#img-heberg-large {
+#heberg-article a:focus, #heberg-aside a:focus {
+    border: 5px solid #DEEBFF;
+    color: black;
+    background: #DEEBFF;
+}
+
+#heberg-article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#section-heberg p {
+    font-size: 14px;
+}
+
+.caption-heberg-article {
+    padding: 5px 13px;
+}    
+
+.caption-heberg-article p {
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+.img-heberg-article {
     width: 235px;
     height: 114px;
     object-fit: cover;
 }
 
+#contenu-article h3 {
+    margin-top: 40px;
+}
+
 .fa-star {
      color: #0065FC;  
-     margin-right: 2px;
+     margin-right: 1px;
 }
 
 /* /Hébergements Article */
@@ -355,20 +330,14 @@ input[type=search] {
 /* Hébergements Aside */
 
 aside {
-    margin-left: 40px;
-    width: 26%;
-    height: 580px;
+    width: 31%;
     background: #F2F2F2;
     border-radius: 20px;
-    padding: 45px 40px;
+    padding: 45px 0 35px 0;
 }
  
-#hebergements-popu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 30px 0 0 0;
-    height: 500px;
+#contenu-aside {
+    margin: 0 40px;
 }
 
 #titre-aside {
@@ -376,35 +345,45 @@ aside {
     justify-content: space-between;
 }
 
-.figure-hebergements-popu {
-    display: flex;
+#heberg-aside a {
+    display: block; /* Le conteneur "#herbeg-aside" n'est pas en flex donc la balise <a> doit être transformée */
     background: white;
     border: 5px solid white;
     border-radius: 20px;
     box-shadow: 0px 1px 10px 0px #bbbbbb87;
     overflow: hidden;
-    margin: 0;
-    width: 342px;
+    margin: 35px 0 0 0;
 }
 
-#img-heberg-petit {
+.figure-heberg-aside {
+    display: flex;
+    margin: 0;
+}
+
+.img-heberg-aside {
     width: 128px;
     height: 135px;
     object-fit: cover;
 }
 
-.heberg-caption-aside {
-    width: 212px;
-    padding: 12px 25px;
+.img-heberg-aside-special {
+    width: 128px;
+    height: 135px;
+    object-fit: cover;
 }
 
-.heberg-caption-aside p {
+
+.caption-heberg-aside {
+    padding: 12px 20px 5px 20px;
+}
+
+.caption-heberg-aside p {
     margin-top: 5px;
     margin-bottom: 8px;
 }
 
-.heberg-caption-aside div {
-    margin-top: 30px;
+.caption-heberg-aside div {
+    margin-bottom: 0;
 } 
 
 /* /Hébergements Aside */
@@ -412,11 +391,11 @@ aside {
 
 /* Section Activités */
 
-#section-activites {
-    margin-top: 65px;
+#section-activ {
+    margin-top: 60px;
 }
 
-#activites-flex {
+#activ {
     display: flex;
     justify-content: space-between
 }     
@@ -426,38 +405,51 @@ aside {
     font-weight: bold;
 }
 
-#activ-colonne {
+.figure-activ-petit, .figure-activ-moyen, .figure-activ-grand {
+    margin: 0;
+}
+
+.activ-colonne-2 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.figure-activites {
-    border: 0 solid;
+.activ-colonne-1 a, .activ-colonne-2 a {
+    display: block; 
     border-radius: 20px;
     box-shadow: 0px 1px 10px 0px #bbbbbb87;
     overflow: hidden;
-    margin: 0;
+}
+
+.activ-colonne-1 a:focus, .activ-colonne-2 a:focus {
+    border: 5px solid #DEEBFF;
+    color: black;
+    background: #DEEBFF;
+}
+
+.activ-colonne-1, .activ-colonne-2 {
+    width: 23%;
+    margin-top: 30px;
 }
 
 .img-activ-petit {
-    width: 303px;
+    width: 100%;
     height: 110px;
     object-fit: cover;
     object-position: 58% 20%;
 }
 
 .img-activ-moyen {
-    width: 303px;
+    width: 100%;
     height: 180px;
     object-fit: cover;
     object-position: 58% 40%;
 }
 
 .img-activ-grand {
-    width: 303px;
+    width: 100%;
     height: 388px;
-  
     object-fit: cover;
     object-position: 58% 0;
 } 
@@ -467,26 +459,27 @@ aside {
 /* Pied-de-page */
 
 footer {
-    height: 195px;
     background: #F2F2F2F2;
     margin-top: 60px;
 }
 
-#footer-liste {
-      display: flex;
+#contenu-footer {
+    display: flex;
     justify-content: space-between;
-
 }
 
-footer ul {
-    margin-top: 30px;
+.liste-footer {
+    margin: 45px 0;
+    width: 31%;    
+}
+
+.liste-footer ul {
     list-style-type: none;
-    width: 33%;
     padding: 0;
 }
 
-footer strong {
-    margin-bottom: 20px;
+footer h3 {
+    margin-top: 0;  
 }
 
 footer li {

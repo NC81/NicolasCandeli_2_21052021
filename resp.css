@@ -1,97 +1,226 @@
-@media all and (min-width: 1024px) {
+@media all and (min-width: 1334px) {
   
-    header, #section-hebergements, #section-activites, #footer-liste {
-        margin-left: auto;
-        margin-right: auto;
-        width: 93%;
-}  
+    header, #section-heberg, #section-activ, #contenu-footer {
+        margin-left: 3%;
+        margin-right: 3%;
+    }  
 
-    #nav-petit {
+    #nav-480, #icone-rechercher {
 	    display: none;
-}
+    }
   
-    #icone-rechercher {
-	    display: none;
 }
 
-}
-
-@media all and (min-device-width: 768px) and (max-device-width: 1024px) {
-
-    #bloc-page {
-        margin: 0 25px 25px 25px;
-}
-
-    #logo {
-        padding-top: 36px;
-}
-
-    #nav-petit {
-	    display: none;
-}
-
-    #nav-normal li {
-	    width: auto;
-        padding-left: 30px;
-}
+@media all and (min-width: 992px) and (max-width: 1333px) {
   
-    #partie-recherche h1 {
-    	margin-top: 22px;
-}
+    header, #section-heberg, #section-activ, #contenu-footer {
+        margin-left: 3%;
+        margin-right: 3%;
+    }  
 
-    #ul-filtre {
-    	margin-top: 12px;
-}
-
-    #information {
-    	margin-top: 22px;
-}    
-
-    #icone-rechercher {
+    #nav-480, #icone-rechercher {
 	    display: none;
-}
+    }
+  
+    article {
+        width: 58%;
+        padding: 30px 0;
+    }
 
-    .li-filtre {
-	    margin-top: 14px;
-        margin-right: 6px;
-}
+    aside {
+        width: 39%;
+        padding: 30px 0;
+    }
 
-}
-
-@media all and (max-device-width: 480px) {
-	
-    #bloc-page {
-        margin: 30px 0 51px 0;
-}
-	  
-	#haut-de-page, #partie-recherche {
-	  	margin: 0 15px 0 20px;
-}
-
-    #logo {
-        padding-top: 0;
-}
-
-    #nav-normal ul, #texte-rechercher {
-        display: none;
-}
+    #contenu-article, #contenu-aside {
+        margin: 0 30px;
+    }
     
-    #nav-normal div {
-        padding-top: 19px;
+    #heberg-article a {
+        width: 46%; /* Permet d'avoir deux élements par ligne */
+    }
+    
+    .img-heberg-article {
+        width: 100%;
+        object-position: 50% 65%;
+    }
+    
 }
+
+@media all and (min-device-width: 768px) and (max-device-width: 991px) {
+
+    header, article, aside, #section-activ, #contenu-footer {
+        margin-left: 4%;
+        margin-right: 4%;
+    }   
+
+    #nav-480, #icone-rechercher  {
+	    display: none;
+    }
+
+    #nav-haut li {
+	    width: 130px;
+    }
+ 
+    #nav-haut div {
+	    width: 110px;
+    }
+
+    #header-bas h1 {
+    	margin-top: 25x; 
+    }
+
+    #filtres {
+        margin-top: 18px;
+        flex-direction: column;
+    }
+    
+    .li-filtre {
+        margin-top: 14px;
+        margin-right: 14px; 
+    }
+
+    #section-heberg {
+        flex-direction: column-reverse; /* Pour faire passer "aside" au-dessus de "article" */
+    }
+
+    article, aside {
+        width: 92%;  
+        padding: 45px 0;
+    }
+
+    article {
+        background: white;
+    }
+
+    #contenu-article, #contenu-aside {
+        margin: 0 3%;
+    }
+    
+    #heberg-article a, #heberg-aside a, .activ-colonne-1, .activ-colonne-2 {
+        width: 47%; /* Permet d'avoir deux élements par ligne */
+        margin-top: 25px;
+    }
+    
+    .img-heberg-article, .img-activ-grand, .img-activ-moyen, .img-activ-petit {
+        width: 100%; /* Prend toute la largeur du conteneur dont la largeur est elle-même définie par le conteneur au-dessus */
+    }
+    
+    #heberg-aside {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    #section-activ {
+        margin-top: 20px;
+    }
+    
+    #activ {
+        flex-wrap: wrap;
+    }
+    
+    footer {
+        margin-top: 40px;
+    } 
+
+}
+
+@media all and (max-device-width: 767px) {
+	
+    #header-haut, #header-bas, #contenu-article, #contenu-aside, #section-activ, #contenu-footer { 
+        margin-left: 5%; /* Pour extraire nav-480 de la règle, on définit les deux éléments (#header-haut, #header-bas) qui sont au-dessus et en-dessous */
+        margin-right: 5%;
+    }
+
+    #nav-haut li, #texte-rechercher {
+        display: none;
+    }
+    
+    #logo {
+        margin-top: 25px;
+    }
+
+    #nav-haut div {
+        margin-top: 40px;
+        text-align: right;
+    }
 
     form {
-	    margin-top: 31px;
-}
+	    margin-top: 32px;
+    }
 
-    #ul-filtre {
-        padding-left: 0;
-        margin-top: 19px;
-}
+    #filtres {
+        flex-direction: column;
+    }
 
     .li-filtre {
 	    margin-top: 14px;
-        margin-right: 11px;
-}
+        margin-right: 8px;
+    }
+
+    #section-heberg {
+        flex-direction: column-reverse;
+    }
+ 
+    #heberg-article a, #heberg-aside a, .activ-colonne-1 a, .activ-colonne-2 a {
+        margin-top: 15px
+    }
+    
+    .img-heberg-article {
+        width: 100%; 
+        object-position: 50% 65%;
+    }
+       
+    article {
+        background:  white;
+        width: 100%;
+        padding: 35px 0; 
+    } 
+    
+    aside {
+        width: 100%;
+        border-radius: initial;
+        padding: 35px 0;
+    }
+    
+    #section-activ {
+        padding-top: 0;
+        margin-top: 20px;
+    }
+    
+    #section-activ h2 {
+    	margin-bottom: 10px;
+    }
+
+    #activ {
+        flex-direction: column;
+    } 
+    
+    .activ-colonne-1, .activ-colonne-2 {
+        width: 100%;
+        margin-top: 0; /* On définit seulement les marges de <a> pour obtenir des marges identiques entre <a> */
+    }
+
+    .img-activ-petit, .img-activ-moyen, .img-activ-grand {
+        width: 100%; 
+        height: 135px;
+        object-position: 0 45%;
+    }
+
+    footer {
+        margin-top: 50px;
+        padding-top: 40px;
+    }
+    
+    #contenu-footer {
+        flex-direction: column;
+    }
+
+    .liste-footer {
+        width: auto;
+        margin-top: 0;
+        margin-bottom: 25px;
+    }
 
 }
