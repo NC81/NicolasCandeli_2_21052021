@@ -1,5 +1,5 @@
-body {
-    margin: 0; /* Pour toucher tous les bords */
+body, input, #rech-normal, #rech-mobile { /* Dans le formulaire, input et bouton d'envoi n'héritent pas de la police définie dans body */
+    margin: 0; 
     font-family: 'Raleway', sans-serif;
 }
 
@@ -8,482 +8,491 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    color: #0065FC;
-}
-
-h1, h2 {
-    font-size: 23px;
+h1 {
+    font-size: 1.375em;
     font-weight: bold;
     margin: 0;
 }
 
+h2 {
+    font-size: 1.125em;
+    font-weight: bold; 
+    margin: 0; 
+}
+
 h3 {
-    font-size: 19px;
+    font-size: 1em;
     font-weight: bold; 
     margin: 0; 
 }
 
-h4 {
-    font-size: 16px;
-    font-weight: bold; 
-    margin: 0; 
+/* DIV - HAUT-DE-PAGE */
+
+header {
+    margin: 0 4%;
 }
 
-p {
-    margin: 0;
-}
-
-/* Header-haut */
-
-#header-haut {
+#haut-de-page {
     display: flex;
     justify-content: space-between;
 }
 
 #logo {
-    margin-top: 50px;
+    margin-top: 45px;
 }
 
-/* Navigation */
+/* NAVIGATION */
 
-#nav-haut {
-display: flex;
+nav ul {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
 }
 
-#nav-haut ul {
-    display: flex;
-    list-style-type: none;
-    margin-top: 0;
+nav li {
+    display: inline-block;
 }
 
-#nav-haut li {
-    font-weight: 500;
-    width: 160px;
-    padding-top: 50px; /* Définir padding-top permet d'obtenir une bordure qui touche le haut de l'écran */
+nav li a {
+    display: block;
+    width: 150px;
+    padding-top: 50px; 
     text-align: center;
 }
 
-#nav-haut li:hover {
+nav li a:hover {
+    color: #0065FC;
     border-top: 2px solid #0065FC;
 }
 
-#nav-haut div {
+#inscrip-normal {
+    display: inline-block;
     font-weight: bold;
-    width: 140px;
-    margin-top: 50px;
+    width: 110px;
     text-align: center;
 }
 
-#nav-480 ul {
-    display: flex;
-    list-style-type: none;
-    padding-left: 0;
-    margin-top: 25px;
+#inscrip-mobile {
+    display: none; /* S'affiche uniquement sur les mobiles */
 }
 
-#nav-480 li {
-    height: 32px;
-    width: 50%;
-    border-bottom: 2px solid #F2F2F2;
-    text-align: center;
-    font-weight: 500;
+#inscrip-mobile:hover, #inscrip-normal:hover {
+    color: #0065FC;
 }
 
-#nav-480 li:hover {
-     border-bottom: 2px solid #0065FC;
+/* /NAVIGATION */
+/* /DIV - HAUT-DE-PAGE */
+
+/* SECTION - RECHERCHE */
+
+#recherche {
+    margin-top: 30px;
 }
 
-/* /Navigation */
-/* /Header-haut */
-
-/* Header-bas */
-
-#header-bas h1{
-    margin-top: 35px;
-}
-
-#header-bas p {
+#recherche p {
     margin-top: 8px;
+    margin-bottom: 0;
 }
 
 /* Formulaire */
 
 form {
-    display: flex;
-    margin-top: 24px;
+    display: flex; /* Colle parfaitement les éléments en leur donnant une hauteur */
+    margin-top: 20px;
     height: 50px; 
 }
 
-input[type=search] {
+#label-ville {
+    width: 50px;
+    line-height: 50px; 
+    text-align: center;
+    background: #F2F2F2;
+    font-size: 1.125em; 
+    border-radius: 17px 0 0 17px;
+    flex-shrink: 0; /* La taille reste inchangée sur les petits écrans */
+}
+
+input {
     border: 2px solid #F2F2F2;
     border-right: none;
     font-weight: bold;
-    font-size: 18px;
-    padding: 0 15px;
+    font-size: 1.125em;
+    padding-left: 15px;
 }
 
-#icone-ville {
-    width: 50px;
-    line-height: 50px; /* Donner la même valeur à "line-height" qu'à "height" permet de centrer un objet verticalement */
-    background: #F2F2F2;
-    text-align: center;
-    font-size: 18px; /* Pour centrer l'icône horizontalement */
-    border-radius: 17px 0 0 17px;
-}
-
-#texte-rechercher {
+#rech-normal {
     width: 134px;
     background: #0065FC;
     color: white;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.125em;
     border: 0;
     border-radius: 0 17px 17px 0;
 }
 
-#icone-rechercher {
+#rech-mobile { /* Cet élément prolonge les bordures de <input> sous le bouton d'envoi */
+    display: none;
+    border: 2px solid #F2F2F2;
+    width: 47px;
+    border-left: none;
+    border-radius: 0 17px 17px 0;
+}
+
+#rech-mobile-contenu {  
     position: relative;
-    right: 11px;
-    font-size: 18px;
-    width: 52px;
+    top: -2px;
+    font-size: 1.0625em;
+    width: 50px;
+    height: 50px;
     background: #0065FC;
     color: white;
     border: 0;
     border-radius: 17px;
 }
 
-#texte-rechercher, #icone-rechercher {
-    color: white;
-    background: #0065FC;
-}
-
-#texte-rechercher:active, #icone-rechercher:active {
+#rech-normal:active, #rech-mobile-contenu:active {
+    border: 2px solid #0065FC;
     color: #0065FC;
     background: white;
 }
 
 /* /Formulaire */
-/* /Header-bas */
 
 /* Filtres */
 
-#filtres {
-    display: flex;
-    font-weight: bold;
-    margin-top: 18px;
+#filtre {
+   margin-top: 30px;
 }
 
-#ul-filtre {
-    display: flex; /* Pour bénéficier de la valeur "wrap" en responsive */
-    flex-wrap: wrap;
+#filtre h2 {
+    display: inline-block;
+    margin-left: 8px;
+    margin-right: 28px;
+}
+
+#filtre-ul {
+    display: inline-block;
+    font-size: 1.125em;
+    font-weight: bold;
     padding-left: 0;
     margin: 0;
-    list-style-type: none;
 }
 
-.li-filtre {
-    margin-right: 20px;
+.filtre-li {
+    display: inline-block;
+    margin-right: 22px;
 }
 
-.li-filtre a {
-    display: flex; 
-    border: 2px solid #F2F2F2;
-    border-left: none;
-    border-radius: 28px; 
-    line-height: 50px; 
+.filtre-li a {
+    position: relative;
+    display: block; 
+    border: 2px solid #D9D9D9;
+    border-radius: 26px;
+    padding: 0 20px 0 58px; /* Permet de définir la largeur du bloc */
+    line-height: 46px; /* Change la taille de la line-box */
 }
 
-.li-filtre a:focus {
-    border: 4px solid #0065FC;
-    background: #0065FC;
-    color: white;
-} 
-
-.cercle-filtre {
+.filtre-cercle {
+    position: absolute; /* L'élément se positionne par rapport au bloc ci-dessus */
+    left: -4px;
+    top: -2px;
     width: 50px;
     height: 50px;
-    line-height: 50px; 
+    line-height: 51px; 
+    text-align: center;
     background: #DEEBFF;
     border-radius: 50%;
-    text-align: center; 
 }
 
-#titre-filtre {
-    margin: 18px 30px 0 0;
+.filtre-li a:hover {
+    background: #DEEBFF;
+    border: 2px solid #DEEBFF;
 }
 
-.nom-filtre {
-    padding: 0 12px 0 10px
+.filtre-li a:focus { /* :focus est placé derrière :hover pour lui donner la priorité */
+    color: white;
+    background: #0065FC;
+    border: 2px solid #0065FC;
 }
 
 .fa-money-bill-wave, .fa-child, .fa-heart, .fa-dog {
-    color: #0065FC; /* Définit la taille des icônes à l'intérieur du cercle */
-    font-size: 18px; 
+    color: #0065FC; 
+    font-size: 1.125em; 
 }
 
 /* /Filtres */
   
-/* Message d'information */
+/* Information */
 
 #information {
     display: flex;
-    line-height: 23px;
     margin-top: 35px;
 }
 
 .fa-info {
     color: #0065FC;
-    font-size: 11px;
 }
 
-#cercle-info {
-    border: 1px solid #F2F2F2;
-    width: 20px;
-    height: 20px;
+#information-cercle {
+    border: 1px solid #D9D9D9;
+    width: 22px;
+    height: 22px;
     text-align: center;
-    line-height: 18px;
     border-radius: 50%;
-    margin-right: 10px;
+    margin: 0 11px 0 5px;
+    flex-shrink: 0;
 }
 
-/* /Message d'information */        
+#information p {
+    margin-top: 3px;
+}
+
+/* /Information */ 
+/* /SECTION - RECHERCHE */       
  
-/* Section Hébergements */
-/* Hébergements Article */
+/* DIV - HÉBERGEMENTS */
 
-#section-heberg {
+#heberg {
     display: flex;
-    justify-content: space-between; /* Pour coller "aside" à droite dans toutes les résolutions */
-    margin-top: 40px;
+    margin: 35px 4% 0 4%;
 }
 
-article {
+/* SECTION - HÉBERGEMENTS TOUS */
+
+#heberg-tous {
+    flex: 1;
     background: #F2F2F2;
-    width: 66%;
     border-radius: 20px;
-    padding: 45px 0;
+    padding: 45px 40px;  
 }
 
-#contenu-article {
-    margin: 0 40px;
-}
-
-#heberg-article a {
-    margin: 30px 0 0 0;
-}
-
-#heberg-article a {
-    border: 5px solid white;
-    border-radius: 20px;
-    box-shadow: 0px 1px 10px 0px #bbbbbb87;
-    overflow: hidden;
-    background:white;
-}
-
-.figure-heberg-article {
-    margin: 0;
-}
-
-#heberg-article a:focus, #heberg-aside a:focus {
-    border: 5px solid #DEEBFF;
-    color: black;
-    background: #DEEBFF;
-}
-
-#heberg-article {
+#heberg-tous-contenu {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-#section-heberg p {
-    font-size: 14px;
-}
-
-.caption-heberg-article {
-    padding: 5px 13px;
-}    
-
-.caption-heberg-article p {
-    margin-top: 5px;
-    margin-bottom: 8px;
-}
-
-.img-heberg-article {
-    width: 235px;
-    height: 114px;
-    object-fit: cover;
-}
-
-#contenu-article h3 {
-    margin-top: 40px;
-}
-
-.fa-star {
-     color: #0065FC;  
-     margin-right: 1px;
-}
-
-/* /Hébergements Article */
-
-/* Hébergements Aside */
-
-aside {
-    width: 31%;
-    background: #F2F2F2;
-    border-radius: 20px;
-    padding: 45px 0 35px 0;
-}
- 
-#contenu-aside {
-    margin: 0 40px;
-}
-
-#titre-aside {
-    display: flex;
-    justify-content: space-between;
-}
-
-#heberg-aside a {
-    display: block; /* Le conteneur "#herbeg-aside" n'est pas en flex donc la balise <a> doit être transformée */
-    background: white;
+#heberg-tous-contenu a, #heberg-popu-contenu a {
+    margin-top: 30px;
     border: 5px solid white;
     border-radius: 20px;
     box-shadow: 0px 1px 10px 0px #bbbbbb87;
     overflow: hidden;
-    margin: 35px 0 0 0;
+    background: white;
 }
 
-.figure-heberg-aside {
+#heberg-tous-contenu a:hover, #heberg-popu-contenu a:hover {
+    background: #DEEBFF;
+    border: 5px solid #DEEBFF;
+}
+
+#heberg-tous-contenu a:active, #heberg-popu-contenu a:active {
+    color: #0065FC;
+}
+
+.heberg-tous-figure {
+    margin: 0;
+}
+
+#heberg p {
+    font-size: 0.875em;
+}
+
+.heberg-tous-caption {
+    padding: 5px 13px;
+}    
+
+.heberg-tous-caption p, .heberg-tous-caption div {
+    margin: 5px 0 0 0;
+}
+
+.heberg-tous-img {
+    width: 235px;
+    height: 114px;
+    object-fit: cover; /* Préserve les proportions de l'image */
+}
+
+#heberg-tous h2 {
+    margin-top: 40px;
+}
+
+#heberg-tous h2 a:hover {
+    color: #0065FC;
+}
+
+.fa-star {
+    color: #0065FC;  
+    margin-right: 1px;
+}
+
+.disabled-star {
+    color: #F2F2F2 !important; /* Force le changement de couleur */
+}
+
+/* /SECTION - HÉBERGEMENTS TOUS */
+
+/* SECTION - HÉBERGEMENTS POPULAIRES */
+
+#heberg-popu {
+    flex: 0.42; /* Calculé par rapport à #heberg-tous qui a une valeur de "1" */
+    background: #F2F2F2;
+    border-radius: 20px;
+    padding: 45px 40px;
+    margin-left: 40px;
+}
+
+#titre-heberg-popu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fa-chart-line {
+    font-size: 1.375em;
+    line-height: 26px !important;
+}
+
+#heberg-popu-contenu {
+    display: flex; /* Cet élément doit être en flex sur tablette, autant le mettre en flex par défaut */
+    flex-direction: column;
+}
+
+.heberg-popu-figure {
     display: flex;
     margin: 0;
 }
 
-.img-heberg-aside {
+.heberg-popu-img {
     width: 128px;
     height: 135px;
     object-fit: cover;
+    flex-shrink: 0;
 }
 
-.img-heberg-aside-special {
-    width: 128px;
-    height: 135px;
-    object-fit: cover;
+.heberg-popu-caption {
+    position: relative; 
+    padding: 12px 10px 0 20px;
 }
 
-
-.caption-heberg-aside {
-    padding: 12px 20px 5px 20px;
+.heberg-popu-caption p {
+    margin: 5px 0 0 0;
 }
 
-.caption-heberg-aside p {
-    margin-top: 5px;
-    margin-bottom: 8px;
-}
-
-.caption-heberg-aside div {
-    margin-bottom: 0;
+.heberg-popu-caption div {
+    position: absolute; /* Positionné en "absolute" par rapport à .heberg-popu-caption */
+    bottom: 5px;
 } 
 
-/* /Hébergements Aside */
-/* /Section Hébergements */
+/* /SECTION - HÉBERGEMENTS POPULAIRES */
+/* /DIV - HÉBERGEMENTS */
 
-/* Section Activités */
-
-#section-activ {
-    margin-top: 60px;
-}
+/* SECTION - ACTIVITÉS */
 
 #activ {
+    margin: 60px 4% 0 4%;
+}
+
+#activ-contenu {
     display: flex;
-    justify-content: space-between
+    justify-content: space-between; 
 }     
+
+.activ-figure {
+    margin: 0;
+}
 
 .activ-caption {
     padding: 16px;
-    font-weight: bold;
-}
-
-.figure-activ-petit, .figure-activ-moyen, .figure-activ-grand {
-    margin: 0;
 }
 
 .activ-colonne-2 {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; /* L'axe principal est vertical */
 }
 
 .activ-colonne-1 a, .activ-colonne-2 a {
-    display: block; 
+    display: block; /* Le premier élément n'est pas un objet flex, donc il doit être transformé pour contenir <figure> */
     border-radius: 20px;
     box-shadow: 0px 1px 10px 0px #bbbbbb87;
     overflow: hidden;
 }
 
-.activ-colonne-1 a:focus, .activ-colonne-2 a:focus {
-    border: 5px solid #DEEBFF;
-    color: black;
+.activ-colonne-1 a:hover, .activ-colonne-2 a:hover {
     background: #DEEBFF;
 }
 
-.activ-colonne-1, .activ-colonne-2 {
-    width: 23%;
-    margin-top: 30px;
+.activ-colonne-1 a:active, .activ-colonne-2 a:active {
+    color: #0065FC;
 }
 
-.img-activ-petit {
-    width: 100%;
+.activ-colonne-1, .activ-colonne-2 {
+    width: 22.5%;
+    margin-top: 25px;
+}
+
+.activ-img-110 {
+    width: 100%; /* La largeur est définie par les colonnes */
     height: 110px;
     object-fit: cover;
-    object-position: 58% 20%;
+    object-position: 50% 17%;
 }
 
-.img-activ-moyen {
+.activ-img-140 {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.activ-img-155 {
+    width: 100%;
+    height: 155px;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.activ-img-180 {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    object-position: 58% 40%;
+    object-position: 50% 40%;
 }
 
-.img-activ-grand {
+.activ-img-390 {
     width: 100%;
-    height: 388px;
+    height: 390px;
     object-fit: cover;
-    object-position: 58% 0;
+    object-position: 50% 50%;
 } 
 
-/* /Section Activités */
+/* /SECTION - ACTIVITÉS */
 
-/* Pied-de-page */
+/* FOOTER */
 
 footer {
-    background: #F2F2F2F2;
-    margin-top: 60px;
-}
-
-#contenu-footer {
     display: flex;
     justify-content: space-between;
+    background: #F2F2F2F2;
+    margin-top: 60px;
+    padding: 45px 4%;
 }
 
-.liste-footer {
-    margin: 45px 0;
+.footer-bloc {
     width: 31%;    
 }
 
-.liste-footer ul {
-    list-style-type: none;
-    padding: 0;
+.footer-bloc a:hover {
+    color: #0065FC;
 }
 
-footer h3 {
-    margin-top: 0;  
+.footer-bloc ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 0;
 }
 
 footer li {
     margin-top: 10px;
 }
                 
-/* /Pied-de-page */                
+/* /FOOTER */                

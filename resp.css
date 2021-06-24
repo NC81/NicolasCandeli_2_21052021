@@ -1,226 +1,277 @@
-@media all and (min-width: 1334px) {
+@media all and (min-width: 1010px) and (max-width: 1350px) {
   
-    header, #section-heberg, #section-activ, #contenu-footer {
-        margin-left: 3%;
-        margin-right: 3%;
-    }  
-
-    #nav-480, #icone-rechercher {
-	    display: none;
-    }
-  
-}
-
-@media all and (min-width: 992px) and (max-width: 1333px) {
-  
-    header, #section-heberg, #section-activ, #contenu-footer {
-        margin-left: 3%;
-        margin-right: 3%;
-    }  
-
-    #nav-480, #icone-rechercher {
-	    display: none;
-    }
-  
-    article {
-        width: 58%;
-        padding: 30px 0;
-    }
-
-    aside {
-        width: 39%;
-        padding: 30px 0;
-    }
-
-    #contenu-article, #contenu-aside {
-        margin: 0 30px;
+    .filtre-li {
+        margin-right: 12px; /* Permet d'avoir le titre et tous les filtres sur une seule ligne */
     }
     
-    #heberg-article a {
-        width: 46%; /* Permet d'avoir deux élements par ligne */
+    #heberg-tous {
+        padding: 40px 30px;
+    }
+
+    #heberg-tous-contenu a {
+        width: 46%; /* Permet d'afficher deux élements par ligne avec une marge */
     }
     
-    .img-heberg-article {
-        width: 100%;
+    .heberg-tous-img {
+        width: 100%; /* Pour s'adapter à la largeur de l'élément ci-dessus */
         object-position: 50% 65%;
     }
-    
-}
 
-@media all and (min-device-width: 768px) and (max-device-width: 991px) {
-
-    header, article, aside, #section-activ, #contenu-footer {
-        margin-left: 4%;
-        margin-right: 4%;
-    }   
-
-    #nav-480, #icone-rechercher  {
-	    display: none;
+    #heberg-popu {
+        flex: 0.6; 
+        margin-left: 30px;
+        padding: 40px 30px;
     }
 
-    #nav-haut li {
+}
+
+@media all and (min-width: 670px) and (max-width: 1009px) {
+
+    header {
+        margin: 0 5%;
+    }
+    
+    nav li a {
 	    width: 130px;
     }
  
-    #nav-haut div {
-	    width: 110px;
+    #inscrip-normal {
+	    width: 100px;
     }
 
-    #header-bas h1 {
-    	margin-top: 25x; 
-    }
-
-    #filtres {
-        margin-top: 18px;
-        flex-direction: column;
+    #filtre h2 {
+        margin-left: 0;
     }
     
-    .li-filtre {
+    .filtre-li {
         margin-top: 14px;
-        margin-right: 14px; 
     }
 
-    #section-heberg {
-        flex-direction: column-reverse; /* Pour faire passer "aside" au-dessus de "article" */
+    #information-cercle, #heberg-popu {
+        margin-left: 0;
+    }
+    
+    #heberg {
+        flex-direction: column-reverse; /* Pour faire passer la section #heberg-popu au-dessus de la section #heberg-tous */
+        margin: 35px 0 0 0;   
     }
 
-    article, aside {
-        width: 92%;  
-        padding: 45px 0;
+    #heberg-tous, #heberg-popu {
+        padding: 40px 5%; /* La largeur correspond aux marges du <header> et de la section #activ, ainsi qu'au padding du <footer> */
+        border-radius: initial;
     }
 
-    article {
+    #heberg-tous {
         background: white;
     }
 
-    #contenu-article, #contenu-aside {
-        margin: 0 3%;
-    }
-    
-    #heberg-article a, #heberg-aside a, .activ-colonne-1, .activ-colonne-2 {
-        width: 47%; /* Permet d'avoir deux élements par ligne */
+    #heberg-tous-contenu a, #heberg-popu-contenu a, .activ-colonne-1, .activ-colonne-2 {
+        width: 46%; 
         margin-top: 25px;
     }
     
-    .img-heberg-article, .img-activ-grand, .img-activ-moyen, .img-activ-petit {
-        width: 100%; /* Prend toute la largeur du conteneur dont la largeur est elle-même définie par le conteneur au-dessus */
+    .heberg-tous-img, .activ-img-390, .activ-img-180, .activ-img-155, .activ-img-140, .activ-img-110 {
+        width: 100%; 
     }
     
-    #heberg-aside {
-        display: flex;
+    #heberg-popu-contenu { 
+        flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
     }
 
-    #section-activ {
-        margin-top: 20px;
+    #activ {
+        margin: 20px 5% 0 5%;
     }
     
-    #activ {
+    #activ-contenu {
         flex-wrap: wrap;
     }
     
     footer {
-        margin-top: 40px;
+        margin-top: 50px;
+        padding: 45px 5%;
     } 
 
 }
 
-@media all and (max-device-width: 767px) {
+@media all and (max-width: 669px) {
 	
-    #header-haut, #header-bas, #contenu-article, #contenu-aside, #section-activ, #contenu-footer { 
-        margin-left: 5%; /* Pour extraire nav-480 de la règle, on définit les deux éléments (#header-haut, #header-bas) qui sont au-dessus et en-dessous */
+    header {
+        margin: 0;
+    }
+    
+    #logo-inscrip, #recherche { /* #logo-inscrip et #recherche ne contiennent pas <nav> qui prend toute la largeur du <header> */
+        margin-left: 5%; 
         margin-right: 5%;
     }
+    
+    #haut-de-page {
+        flex-direction: column;
+    }
 
-    #nav-haut li, #texte-rechercher {
+    #inscrip-normal, #rech-normal {
         display: none;
+    }
+    
+    #logo-inscrip {
+        display: flex;
+        justify-content: space-between;
     }
     
     #logo {
         margin-top: 25px;
     }
-
-    #nav-haut div {
+    
+    #inscrip-mobile {
+        display: inline;
+        font-weight: bold;
         margin-top: 40px;
-        text-align: right;
+    }
+
+    nav ul {
+        display: flex; /* Colle les deux éléments décrits ci-dessous sans le moindre espace */
+    }
+    
+    nav li {
+        width: 50%;
+    }
+    
+    nav li a {
+        height: 32px; 
+        padding-top: 25px;
+        width: auto;
+        border-bottom: 3px solid #F2F2F2;
+    }
+    
+    nav li a:hover {
+        border-top: 0;
+        border-bottom: 3px solid #0065FC;
     }
 
     form {
-	    margin-top: 32px;
+	    margin-top: 35px;
     }
 
-    #filtres {
-        flex-direction: column;
+    #ville {
+        min-width: 0; /* Permet de réduire la zone de saisie */
     }
 
-    .li-filtre {
-	    margin-top: 14px;
-        margin-right: 8px;
+    #rech-mobile {
+        display: block;
+    }    
+    
+    #filtre h2 {
+        margin: 5px 0 0 0;
     }
 
-    #section-heberg {
-        flex-direction: column-reverse;
+    .filtre-li {
+	    margin: 14px 10px 0 0;
     }
- 
-    #heberg-article a, #heberg-aside a, .activ-colonne-1 a, .activ-colonne-2 a {
-        margin-top: 15px
+
+    .filtre-li a {
+        font-size: 0.9em;
+        padding: 0 12px 0 56px;
+    }
+
+    #information-cercle, #heberg-popu {
+        margin-left: 0;
     }
     
-    .img-heberg-article {
+    #heberg {
+        flex-direction: column-reverse;
+        margin: 35px 0 0 0;
+    }
+ 
+    #heberg-tous h1, #titre-heberg-popu {
+        margin-bottom: 10px;
+    }
+    
+    #heberg-tous-contenu {
+        flex-direction: column; /* Firefox exige cette précision */
+    }
+
+    #heberg-tous-contenu a, #heberg-popu-contenu a {
+        margin-top: 12px
+    }
+    
+    .heberg-tous-img {
         width: 100%; 
         object-position: 50% 65%;
     }
        
-    article {
-        background:  white;
-        width: 100%;
-        padding: 35px 0; 
-    } 
-    
-    aside {
-        width: 100%;
+    #heberg-tous, #heberg-popu {
+        padding: 40px 5%;
         border-radius: initial;
-        padding: 35px 0;
-    }
-    
-    #section-activ {
-        padding-top: 0;
-        margin-top: 20px;
-    }
-    
-    #section-activ h2 {
-    	margin-bottom: 10px;
     }
 
+    #heberg-tous {
+        background: white;
+    }
+/* Les trois règles suivantes empêchent le texte de passer sous le bloc d'étoiles en "absolute" */
+    .heberg-popu-caption h3 { 
+        line-height: 18px;
+    }
+    
+    .heberg-popu-caption p {
+        line-height: 14px; 
+    }
+    
+    .heberg-popu-caption div {
+        bottom: 0;
+    }
+    
     #activ {
+        margin: 20px 5% 0 5%;
+    }
+    
+    #activ-contenu {
         flex-direction: column;
     } 
     
+    .activ-colonne-1 a, .activ-colonne-2 a {
+        margin-top: 25px;
+    }
+    
     .activ-colonne-1, .activ-colonne-2 {
-        width: 100%;
-        margin-top: 0; /* On définit seulement les marges de <a> pour obtenir des marges identiques entre <a> */
+        width: auto;
+        margin-top: 0; /* On élimine la margin-top des colonnes pour ne laisser que la margin-top de <a> */
     }
 
-    .img-activ-petit, .img-activ-moyen, .img-activ-grand {
+    .activ-img-390, .activ-img-180, .activ-img-155, .activ-img-140, .activ-img-110 {
         width: 100%; 
         height: 135px;
-        object-position: 0 45%;
+    }
+
+    .activ-img-110 {
+        object-position: 50% 28%;
+    }
+    
+    .activ-img-140 {
+        object-position: 50% 22%;
+    }
+    
+    .activ-img-155 {
+        object-position: 50% 36%;
+    }
+
+    .activ-img-180 {
+        object-position: 50% 50%;
+    }
+
+    .activ-img-390 {
+        object-position: 50% 40%;
     }
 
     footer {
+        flex-direction: column;
         margin-top: 50px;
-        padding-top: 40px;
+        padding: 45px 5% 0 5%; 
     }
     
-    #contenu-footer {
-        flex-direction: column;
-    }
-
-    .liste-footer {
+    .footer-bloc {
         width: auto;
-        margin-top: 0;
-        margin-bottom: 25px;
+        margin-bottom: 45px; /* Remplace le padding-bottom du <footer> */
     }
 
 }
