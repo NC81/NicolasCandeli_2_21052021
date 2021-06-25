@@ -3,32 +3,44 @@
     
     <head>
         <meta charset="utf-8" />
+        <title>Reservia - Planifiez vos vacances</title>
+        <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" />
+        <!-- Css -->
         <link rel="stylesheet" href="style.css" />
         <link rel="stylesheet" href="resp.css" />
+        <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous" />
+        <!-- Fenêtre -->
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-       <title>Reservia - Planifiez vos vacances</title>
+        <!-- Metatags -->
+        <meta name="description" content="Trouvez des hébergements et des activités dans la ville de votre choix." />
+        <meta name="twitter:card" content="summary" />
+        <meta property="og:title" content="Reservia - Planifiez vos vacances" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://nc81.github.io/NicolasCandeli_2_21052021/" />
+        <meta property="og:image" content="https://nc81.github.io/NicolasCandeli_2_21052021/image/reservia.svg" />
+        <meta property="og:description" content="Trouvez des hébergements et des activités dans la ville de votre choix." />
     </head>
 
     <body>
         <!-- HEADER -->
         <header>
             <!-- DIV - HAUT-DE-PAGE -->
-            <div id="haut-de-page"> 
+            <div id="header-haut"> 
                 <div id="logo-inscrip">
                     <div id="logo"><img src="./image/reservia.svg" alt="Logo Reservia" /></div>
-                    <a id="inscrip-mobile" href="#vide">S'inscrire</a>
+                    <a id="inscrip-mobile-a" href="#vide">S'inscrire</a>
                 </div>     
                 <!-- NAVIGATION -->
                 <nav>
                     <ul>
                         <li><a href="#heberg">Hébergements</a></li>
                         <li><a href="#activ">Activités</a></li>
+                        <li id="inscrip-normal-li"><a href="#vide">S'inscrire</a></li>
                     </ul>
-                    <a id="inscrip-normal" href="#vide">S'inscrire</a> 
                 </nav>
             </div>
             <!-- SECTION - RECHERCHE -->
@@ -39,8 +51,8 @@
                 <form method="post" action="traitement.php">
                     <label for="ville" id="label-ville"><i class="fas fa-map-marker-alt fa-1x"></i></label> 
                     <input type="search" id="ville" name="rech_ville" size="20" placeholder="Où allez-vous ?" />
-                    <button id="rech-normal" type="submit" name="soumettre">Rechercher</button> 
-                    <div id="rech-mobile"><button id="rech-mobile-contenu" type="submit" name="soumettre"><i class="fas fa-search"></i></button></div>
+                    <button disabled id="rech-normal" type="submit" name="soumettre">Rechercher</button> 
+                    <div id="rech-mobile"><button disabled id="rech-mobile-contenu" type="submit" name="soumettre"><i class="fas fa-search"></i></button></div>
                 </form>
                 <!-- Filtres -->
                 <div id="filtre"> 
@@ -61,20 +73,20 @@
                     </ul>
                 </div>
                 <!-- Information -->
-                <div id="information">
-                    <div id="information-cercle"> <i class="fas fa-info fa-xs"></i></div>
+                <div id="info">
+                    <div id="info-cercle"><i class="fas fa-info fa-xs"></i></div>
                     <p>Plus de 500 logements sont disponibles dans cette ville</p>
                 </div>
             </section> 
         </header>
-        <!-- DIV - HÉBERGEMENTS  -->
+        <!-- DIV - HÉBERGEMENTS -->
         <div id="heberg"> 
             <!-- SECTION - HÉBERGEMENTS TOUS -->
             <section id="heberg-tous"> 
                 <h1>Hébergements à Marseille</h1>
                 <div id="heberg-tous-contenu"> 
                     <a href="#vide"><figure class="heberg-tous-figure">
-                        <img src="./image/hebergements/s_auberge-cannebiere.jpg" alt="Auberge de la Cannebière" class="heberg-tous-img" />
+                        <img src="./image/hebergements/s_auberge-cannebiere.jpg" alt="Auberge la Cannebière" class="heberg-tous-img" />
                         <figcaption class="heberg-tous-caption"> 
                             <h3>Auberge la Cannebière</h3>
                             <p>Nuit à partir de <strong>25€</strong></p>
@@ -90,15 +102,15 @@
                         </figcaption>
                     </figure></a>
                     <a href="#vide"><figure class="heberg-tous-figure">
-                        <img src="./image/hebergements/s_hotel-mouettes.jpg" alt="Hôtel les mouettes" class="heberg-tous-img" />
+                        <img src="./image/hebergements/s_hotel-mouettes.jpg" alt="Hôtel Les mouettes" class="heberg-tous-img" />
                         <figcaption class="heberg-tous-caption"> 
-                            <h3>Hôtel les mouettes</h3>
+                            <h3>Hôtel Les mouettes</h3>
                             <p>Nuit à partir de <strong>76€</strong></p>
                             <div><i class="fas fa-star fa-xs"></i><i class="fas fa-star fa-xs"></i><i class="fas fa-star fa-xs"></i><i class="fas fa-star fa-xs"></i><i class="disabled-star fas fa-star fa-xs"></i></div>
                         </figcaption>
                     </figure></a>
                     <a href="#vide"><figure class="heberg-tous-figure">
-                        <img src="./image/hebergements/m_hotel-mer.jpg" alt="Hôtel de la mer" class="heberg-tous-img" />
+                        <img src="./image/hebergements/s_hotel-mer.jpg" alt="Hôtel de la mer" class="heberg-tous-img" />
                         <figcaption class="heberg-tous-caption"> 
                             <h3>Hôtel de la mer</h3>
                             <p>Nuit à partir de <strong>46€</strong></p>
@@ -106,9 +118,9 @@
                         </figcaption>
                     </figure></a>
                     <a href="#vide"><figure class="heberg-tous-figure">
-                        <img src="./image/hebergements/s_auberge-panier.jpg" alt="Auberge le Panier" class="heberg-tous-img" />
+                        <img src="./image/hebergements/s_auberge-panier.jpg" alt="Auberge Le Panier" class="heberg-tous-img" />
                         <figcaption class="heberg-tous-caption"> 
-                            <h3>Auberge le Panier</h3>
+                            <h3>Auberge Le Panier</h3>
                             <p> Nuit à partir de <strong>23€</strong></p>
                             <div><i class="fas fa-star fa-xs"></i><i class="fas fa-star fa-xs"></i><i class="fas fa-star fa-xs"></i><i class="fas fa-star fa-xs"></i><i class="disabled-star fas fa-star fa-xs"></i></div>
                         </figcaption>
@@ -164,8 +176,8 @@
             <div id="activ-contenu"> 
                 <div class="activ-colonne-1"> 
                     <a href="#vide"><figure class="activ-figure">
-                        <img src ="./image/activites/s_vieux-port.jpg" alt="Vieux port" class="activ-img-390" />
-                        <figcaption class="activ-caption"><h3>Vieux port</h3></figcaption>
+                        <img src ="./image/activites/s_vieux-port.jpg" alt="Vieux Port" class="activ-img-390" />
+                        <figcaption class="activ-caption"><h3>Vieux Port</h3></figcaption>
                     </figure></a>
                 </div>
                 <div class="activ-colonne-2">
@@ -174,23 +186,23 @@
                         <figcaption class="activ-caption"><h3>Fort de Pomègues</h3></figcaption>
                     </figure></a>
                     <a href="#vide"><figure class="activ-figure"> 
-                        <img src ="./image/activites/s_frioul.jpg" alt="îles-de-frioul" class="activ-img-110" />
-                        <figcaption class="activ-caption"><h3>Îles de Frioul</h3></figcaption>
+                        <img src ="./image/activites/s_frioul.jpg" alt="îles-du-Frioul" class="activ-img-110" />
+                        <figcaption class="activ-caption"><h3>Îles du Frioul</h3></figcaption>
                     </figure></a>
                 </div>
                 <div class="activ-colonne-1">
                     <a href="#vide"><figure class="activ-figure">
-                        <img src ="./image/activites/s_parc-calanques.jpg" alt="Parc national des Calanques" class="activ-img-390" />
-                        <figcaption class="activ-caption"><h3>Parc national des Calanques</h3></figcaption>
+                        <img src ="./image/activites/s_parc-calanques.jpg" alt="Parc National des Calanques" class="activ-img-390" />
+                        <figcaption class="activ-caption"><h3>Parc National des Calanques</h3></figcaption>
                     </figure></a>
                 </div>
                 <div class="activ-colonne-2">
                     <a href="#vide"><figure class="activ-figure">
-                        <img src ="./image/activites/m_notre-dame.jpg" alt="Notre-Dame-de-la-Garde" class="activ-img-140" />
+                        <img src ="./image/activites/s_notre-dame.jpg" alt="Notre-Dame-de-la-Garde" class="activ-img-140" />
                         <figcaption class="activ-caption"><h3>Notre-Dame-de-la-Garde</h3></figcaption>
                     </figure></a>
                     <a href="#vide"><figure class="activ-figure">
-                        <img src ="./image/activites/m_parc-longchamp.jpg" alt="Parc Longchamp" class="activ-img-155" />
+                        <img src ="./image/activites/s_parc-longchamp.jpg" alt="Parc Longchamp" class="activ-img-155" />
                         <figcaption class="activ-caption"><h3>Parc Longchamp</h3></figcaption>
                     </figure></a>
                 </div>
@@ -198,22 +210,22 @@
         </section>
         <!-- FOOTER-->
         <footer>
-            <div class="footer-bloc">
-                <h2>À propos</h2>
+            <div class="footer-boite">
+                <h2>A propos</h2>
                 <ul>
                     <li><a href="#vide">Fonctionnement du site</a></li>
                     <li><a href="#vide">Conditions générales de vente</a></li>
-                    <li><a href="#vide">Données et confidentialités</a></li>
+                    <li><a href="#vide">Données et confidentialité</a></li>
                 </ul>
             </div>
-            <div class="footer-bloc">
+            <div class="footer-boite">
                 <h2>Nos hébergements</h2>
                 <ul>  
                     <li><a href="#vide">Charte qualité</a></li>
                     <li><a href="#vide">Soumettre votre hôtel</a></li>
                 </ul>
             </div>
-            <div class="footer-bloc">
+            <div class="footer-boite">
                 <h2>Assistance</h2>
                 <ul> 
                     <li><a href="#vide">Centre d'aide</a></li>

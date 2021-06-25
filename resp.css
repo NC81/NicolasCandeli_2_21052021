@@ -1,56 +1,21 @@
-@media all and (min-width: 1010px) and (max-width: 1350px) {
-  
-    .filtre-li {
-        margin-right: 12px; /* Permet d'avoir le titre et tous les filtres sur une seule ligne */
-    }
-    
-    #heberg-tous {
-        padding: 40px 30px;
-    }
-
-    #heberg-tous-contenu a {
-        width: 46%; /* Permet d'afficher deux élements par ligne avec une marge */
-    }
-    
-    .heberg-tous-img {
-        width: 100%; /* Pour s'adapter à la largeur de l'élément ci-dessus */
-        object-position: 50% 65%;
-    }
-
-    #heberg-popu {
-        flex: 0.6; 
-        margin-left: 30px;
-        padding: 40px 30px;
-    }
-
-}
-
-@media all and (min-width: 670px) and (max-width: 1009px) {
+@media all and (min-width: 560px) and (max-width: 999px) {
 
     header {
         margin: 0 5%;
     }
     
     nav li a {
-	    width: 130px;
+	    width: 120px;
     }
  
-    #inscrip-normal {
-	    width: 100px;
+    #inscrip-normal-li a {
+	    width: 80px;
     }
 
-    #filtre h2 {
+    #filtre h2, #info-cercle, #heberg-popu {
         margin-left: 0;
     }
-    
-    .filtre-li {
-        margin-top: 14px;
-    }
-
-    #information-cercle, #heberg-popu {
-        margin-left: 0;
-    }
-    
+      
     #heberg {
         flex-direction: column-reverse; /* Pour faire passer la section #heberg-popu au-dessus de la section #heberg-tous */
         margin: 35px 0 0 0;   
@@ -66,12 +31,12 @@
     }
 
     #heberg-tous-contenu a, #heberg-popu-contenu a, .activ-colonne-1, .activ-colonne-2 {
-        width: 46%; 
+        width: 46%; /* Permet d'afficher deux éléments par ligne avec une marge */
         margin-top: 25px;
     }
     
-    .heberg-tous-img, .activ-img-390, .activ-img-180, .activ-img-155, .activ-img-140, .activ-img-110 {
-        width: 100%; 
+    .heberg-tous-img {
+        width: 100%; /* S'adapte à la largeur du premier des éléments ci-dessus */
     }
     
     #heberg-popu-contenu { 
@@ -95,7 +60,7 @@
 
 }
 
-@media all and (max-width: 669px) {
+@media all and (max-width: 559px) {
 	
     header {
         margin: 0;
@@ -106,11 +71,11 @@
         margin-right: 5%;
     }
     
-    #haut-de-page {
+    #header-haut {
         flex-direction: column;
     }
 
-    #inscrip-normal, #rech-normal {
+    #inscrip-normal-li, #rech-normal {
         display: none;
     }
     
@@ -123,16 +88,12 @@
         margin-top: 25px;
     }
     
-    #inscrip-mobile {
+    #inscrip-mobile-a {
         display: inline;
         font-weight: bold;
         margin-top: 40px;
     }
 
-    nav ul {
-        display: flex; /* Colle les deux éléments décrits ci-dessous sans le moindre espace */
-    }
-    
     nav li {
         width: 50%;
     }
@@ -161,12 +122,12 @@
         display: block;
     }    
     
-    #filtre h2 {
-        margin: 5px 0 0 0;
+    #filtre h2, #info-cercle, #heberg-popu {
+        margin-left: 0;
     }
 
     .filtre-li {
-	    margin: 14px 10px 0 0;
+	    margin-right: 10px;
     }
 
     .filtre-li a {
@@ -174,10 +135,6 @@
         padding: 0 12px 0 56px;
     }
 
-    #information-cercle, #heberg-popu {
-        margin-left: 0;
-    }
-    
     #heberg {
         flex-direction: column-reverse;
         margin: 35px 0 0 0;
@@ -192,7 +149,7 @@
     }
 
     #heberg-tous-contenu a, #heberg-popu-contenu a {
-        margin-top: 12px
+        margin-top: 12px;
     }
     
     .heberg-tous-img {
@@ -208,19 +165,7 @@
     #heberg-tous {
         background: white;
     }
-/* Les trois règles suivantes empêchent le texte de passer sous le bloc d'étoiles en "absolute" */
-    .heberg-popu-caption h3 { 
-        line-height: 18px;
-    }
-    
-    .heberg-popu-caption p {
-        line-height: 14px; 
-    }
-    
-    .heberg-popu-caption div {
-        bottom: 0;
-    }
-    
+
     #activ {
         margin: 20px 5% 0 5%;
     }
@@ -235,11 +180,10 @@
     
     .activ-colonne-1, .activ-colonne-2 {
         width: auto;
-        margin-top: 0; /* On élimine la margin-top des colonnes pour ne laisser que la margin-top de <a> */
+        margin-top: 0; /* L'espacement entre les <a> est défini ci-dessus */
     }
 
     .activ-img-390, .activ-img-180, .activ-img-155, .activ-img-140, .activ-img-110 {
-        width: 100%; 
         height: 135px;
     }
 
@@ -269,7 +213,7 @@
         padding: 45px 5% 0 5%; 
     }
     
-    .footer-bloc {
+    .footer-boite {
         width: auto;
         margin-bottom: 45px; /* Remplace le padding-bottom du <footer> */
     }
